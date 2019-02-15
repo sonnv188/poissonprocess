@@ -1,0 +1,28 @@
+Lin
+Coefficients: 
+ [[15.59051807  0.05049678]]
+Mean squared error lin: 70.64
+Variance score lin: 0.26
+
+
+Poly Coefficients: 
+ [[ 2.98532124e+01 -5.47171577e-01  5.19671831e-03 -1.20420704e-05
+  -5.36550473e-11]]
+Poly Mean squared error: 53.47
+Poly Variance score: 0.44
+
+RBF
+
+Mean squared error RBF: 48.55
+Variance score: 0.49
+
+
+Linear-Coefficients: 
+ [[0.05049678]]
+Linear-Mean squared error: 74.53
+Linear-Variance score: 0.22
+LinearPoly-Coefficients: 
+ [[ 0.00000000e+00 -8.13082576e-01  9.37824848e-03 -3.47281423e-05
+   3.95267259e-08]]
+LinearPoly-Mean squared error: 47.80
+LinearPoly-Variance score: 0.50

@@ -1,0 +1,33 @@
+
+Lin PT
+==============
+Coefficients: 
+ [[7.21908714 0.02243442]]
+Mean squared error: 45.12
+Variance score: -0.38
+
+
+   
+Poly PT
+Coefficients: 
+ [[ 1.27831143e+01 -7.04854933e-03 -1.35407157e-03  6.80794835e-06
+   2.03594144e-09]]
+Mean squared error: 23.26
+Variance score: 0.29   
+   
+   
+  RBF
+  Mean squared error RBF: 20.25
+Variance score: 0.38
+
+
+
+Linear-Coefficients: 
+ [[0.02778967]]
+Linear-Mean squared error: 35.85
+Linear-Variance score: -0.17
+LinearPoly-Coefficients: 
+ [[ 0.00000000e+00  8.36567733e-02 -3.99608540e-03  2.95167264e-05
+  -5.79953440e-08]]
+LinearPoly-Mean squared error: 19.91
+LinearPoly-Variance score: 0.35

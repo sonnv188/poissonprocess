@@ -1,0 +1,32 @@
+Lin SF
+
+Coefficients: 
+ [[26.78613416 -0.06581842]]
+Mean squared error: 58.22
+Variance score: 0.32
+
+
+
+Poly SF
+Coefficients: 
+ [[ 2.75365135e+01  2.01189472e-01 -4.89580341e-03  1.74299267e-05
+   4.48151672e-09]]
+Mean squared error: 30.86
+Variance score: 0.64
+
+
+RBF SF
+Mean squared error RBF: 17.46
+Variance score: 0.80
+
+
+
+Linear-Coefficients: 
+ [[-0.12789077]]
+Linear-Mean squared error: 48.33
+Linear-Variance score: 0.54
+LinearPoly-Coefficients: 
+ [[ 0.00000000e+00  4.66936063e-01 -6.79479869e-03  3.01898945e-06
+   1.07875875e-07]]
+LinearPoly-Mean squared error: 19.72
+LinearPoly-Variance score: 0.81

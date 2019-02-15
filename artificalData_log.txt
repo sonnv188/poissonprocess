@@ -1,0 +1,10 @@
+Linear-Coefficients: 
+ [[0.00421926]]
+Linear-Mean squared error: 112.13
+Linear-Variance score: 0.00
+LinearPoly-Coefficients: 
+ [[ 0.00000000e+00  4.80691000e-08  2.73516441e-09  1.36917203e-07
+   3.99436132e-06 -8.60159179e-08  7.45150225e-10 -3.22606947e-12
+   6.95841620e-15 -5.97435814e-18]]
+LinearPoly-Mean squared error: 30.16
+LinearPoly-Variance score: 0.73
