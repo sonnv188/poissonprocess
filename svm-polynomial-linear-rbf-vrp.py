@@ -5,7 +5,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # #############################################################################
 # Generate sample data
-f = open("poissonprocess/data/SanFrancisco/reqs-period288-Train.txt", "r")
+f = open("data/SanFrancisco/reqs-period288-Train.txt", "r")
 X = np.empty([0,1], dtype = int)
 
 y = np.array([])
@@ -18,7 +18,7 @@ for i in range(250):
     y = np.concatenate((y, np.array([int(my_lines[1])])), axis = 0)
 f.close()
 
-f = open("poissonprocess/data/SanFrancisco/reqs-period288-Test.txt", "r")
+f = open("data/SanFrancisco/reqs-period288-Test.txt", "r")
 X_test = np.empty([0,1], dtype = int)
 
 y_test = np.empty([0,1], dtype = int)
@@ -33,13 +33,15 @@ f.close()
 # #############################################################################
 # Fit regression model
 svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
-svr_lin = SVR(kernel='linear', C=1e3, degree = 4)
+svr_lin = SVR(kernel='linear', C=1e3)
 svr_poly = SVR(kernel='poly', C=1e3, degree=6)
 
-y_rbf = svr_rbf.fit(X, y).predict(X)
-y_lin = svr_lin.fit(X, y).predict(X)
-y_poly = svr_poly.fit(X, y).predict(X)
-
+svr_rbf.fit(X, y)
+svr_lin.fit(X, y)
+svr_poly.fit(X, y)
+y_rbf = svr_rbf.predict(X)
+y_lin = svr_lin.predict(X)
+y_poly = svr_poly.predict(X)
 
 diabetes_y_pred_rbf = svr_rbf.predict(X_test)
 
@@ -80,7 +82,7 @@ plt.ylabel('target')
 plt.title('Support Vector Regression')
 plt.legend()
 
-fn = 'allreg_AFD_288.png'    
+fn = 'allreg_SF_288.png'    
 plt.xlabel('$x$', fontsize = 20);
 plt.ylabel('$y$', fontsize = 20);
     
