@@ -5,7 +5,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # #############################################################################
 # Generate sample data
-f = open("data/SanFrancisco/reqs-period288-Train.txt", "r")
+f = open("poissonprocess/data/SanFrancisco/reqs-period288-Train.txt", "r")
 X = np.empty([0,1], dtype = int)
 
 y = np.array([])
@@ -18,7 +18,7 @@ for i in range(250):
     y = np.concatenate((y, np.array([int(my_lines[1])])), axis = 0)
 f.close()
 
-f = open("data/SanFrancisco/reqs-period288-Test.txt", "r")
+f = open("poissonprocess/data/SanFrancisco/reqs-period288-Test.txt", "r")
 X_test = np.empty([0,1], dtype = int)
 
 y_test = np.empty([0,1], dtype = int)
