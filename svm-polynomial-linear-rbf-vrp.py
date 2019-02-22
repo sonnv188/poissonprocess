@@ -34,7 +34,7 @@ f.close()
 # Fit regression model
 svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
 svr_lin = SVR(kernel='linear', C=1e3)
-svr_poly = SVR(kernel='poly', C=1e3, degree=5)
+svr_poly = SVR(kernel='poly', C=1e3, degree=4)
 
 svr_rbf.fit(X, y)
 svr_lin.fit(X, y)
