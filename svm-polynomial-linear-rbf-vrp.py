@@ -5,7 +5,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # #############################################################################
 # Generate sample data
-f = open("poissonprocess/data/SanFrancisco/reqs-period288-Train.txt", "r")
+f = open("E:/Project/Projects-SonNV/poissonprocess/data/SanFrancisco/reqs-period288-Train.txt", "r")
 X = np.empty([0,1], dtype = int)
 
 y = np.array([])
@@ -18,7 +18,7 @@ for i in range(250):
     y = np.concatenate((y, np.array([int(my_lines[1])])), axis = 0)
 f.close()
 
-f = open("poissonprocess/data/SanFrancisco/reqs-period288-Test.txt", "r")
+f = open("E:/Project/Projects-SonNV/poissonprocess/data/SanFrancisco/reqs-period288-Test.txt", "r")
 X_test = np.empty([0,1], dtype = int)
 
 y_test = np.empty([0,1], dtype = int)
@@ -34,14 +34,20 @@ f.close()
 # Fit regression model
 svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
 svr_lin = SVR(kernel='linear', C=1e3)
-svr_poly = SVR(kernel='poly', C=1e3, degree=3)
+#svr_poly = SVR(kernel='poly', C=1e3, gamma='auto', degree=3, epsilon=.1, coef0=1)
 
 svr_rbf.fit(X, y)
+print("1")
 svr_lin.fit(X, y)
-svr_poly.fit(X, y)
+print("2")
+#svr_poly.fit(X, y)
+print("3")
 y_rbf = svr_rbf.predict(X)
+print("4")
 y_lin = svr_lin.predict(X)
-y_poly = svr_poly.predict(X)
+print("5")
+#y_poly = svr_poly.predict(X)
+print("6")
 
 diabetes_y_pred_rbf = svr_rbf.predict(X_test)
 
@@ -60,12 +66,12 @@ print("Mean squared error lin: %.2f"
 print('Variance score lin: %.2f' % r2_score(y_test, diabetes_y_pred_lin))
 
 
-diabetes_y_pred_poly = svr_poly.predict(X_test)
+#diabetes_y_pred_poly = svr_poly.predict(X_test)
 ## The mean squared error
-print("Mean squared error poly: %.2f"
-      % mean_squared_error(y_test, diabetes_y_pred_poly))
+#print("Mean squared error poly: %.2f"
+ #     % mean_squared_error(y_test, diabetes_y_pred_poly))
 # Explained variance score: 1 is perfect prediction
-print('Variance score poly: %.2f' % r2_score(y_test, diabetes_y_pred_poly))
+#print('Variance score poly: %.2f' % r2_score(y_test, diabetes_y_pred_poly))
 
 # #############################################################################
 # Look at the results
@@ -75,7 +81,7 @@ plt.scatter(X_test.T, y_test.T, c = 'y', marker = '^', s = 40, label = 'Test sam
 
 plt.plot(X, y_rbf, color='navy', marker=5, lw=lw, label='RBF model')
 plt.plot(X, y_lin, color='c', marker='*', lw=lw, label='Linear model')
-plt.plot(X, y_poly, color='cornflowerblue', marker='x', lw=lw, label='Polynomial model')
+#plt.plot(X, y_poly, color='cornflowerblue', marker='x', lw=lw, label='Polynomial model')
 
 plt.xlabel('data')
 plt.ylabel('target')
